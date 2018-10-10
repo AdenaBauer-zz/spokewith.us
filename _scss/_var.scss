@@ -1,4 +1,27 @@
+/* Loosely inspired by the SASS "7-1 Pattern"(SMACSS-like):
+https://sass-guidelin.es/#the-7-1-pattern */
+
+/* THEME
+=============================================================== */
+
+$color--spoke: #fe455b;
+
+/* BASE
+=============================================================== */
+
 $base--font-family: 'Muli', 'Helvetica Neue', 'Arial', sans-serif;
+$base--font-family-h: 'Lora', serif;
 $base--font-size: 16px;
-$base--color-primary: #fff;
-$base--background: #fff;
+$base--color-primary: #000;
+$base--color-secondary: #555;
+$base--background: white;
+
+/* LAYOUT
+=============================================================== */
+
+$page--margin-lr: 32px;
+$page--max-width: 1152px;
+
+@mixin line-height($mult) {
+  line-height: $mult * 16px; // mult * base rhythm
+}

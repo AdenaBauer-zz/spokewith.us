@@ -3,6 +3,9 @@
 
 @import 'var';
 
+/* GENERAL
+=============================================================== */
+
 html {
   box-sizing: border-box;
 }
@@ -20,4 +23,85 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: $base--color-primary;
   background: $base--background;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0; padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $base--font-family-h;
+}
+
+h1 {
+  font-size: 52px;
+  line-height: 72px; // 4.5 * 16px
+}
+
+@mixin container() {
+  width: 100%;
+  max-width: $page--max-width;
+  margin: 0 $page--margin-lr;
+  background: lightgray;
+}
+
+/* HERO, HEADER
+=============================================================== */
+
+section.hero {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  height: 640px;
+}
+
+.hero-container {
+  @include container();
+
+  display: flex;
+}
+
+.container-cta, .container-demo {
+  flex: 1;
+}
+
+.container-cta {
+  padding-top: 185px;
+
+  h1 {
+    max-width: 400px;
+    margin-bottom: 16px;
+  }
+  p {
+    max-width: 400px;
+    margin-bottom: 24px;
+    font-size: 20px;
+    @include line-height(2);
+    color: $base--color-secondary;
+  }
+}
+
+.cta-button {
+  height: 112px;
+
+  > button {
+    height: 64px;
+    margin: 32px 0 0; padding: 0 32px;
+    border: none;
+    background: gray;
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+header.header {
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+}
+
+.header-container {
+  @include container();
 }
