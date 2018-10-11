@@ -265,7 +265,7 @@ section.signup {
   display: flex;
   justify-content: center;
 
-  padding-top: 93px; padding-bottom: 92px;
+  padding-top: 77px; padding-bottom: 93px;
 }
 
 .signup-container {
@@ -282,11 +282,76 @@ section.signup {
 }
 
 .signup-description {
-  margin-bottom: 40px;
+  margin-bottom: 39px;
   color: $base--color-secondary;
   font-size: 20px;
   @include line-height(2);
   text-align: center;
+}
+
+form.signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+input[type="text"], input[type="submit"] {
+  height: 64px;
+  margin-bottom: 16px;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+input[type="text"] {
+  padding: 0 24px;
+  border: 1px solid $color--gallery;
+  background: $color--alabaster;
+  font-size: 20px;
+}
+
+input[type="text"]::placeholder {
+  color: $base--color-tertiary;
+}
+
+input[type="submit"] {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  background: $color--spoke;
+}
+
+.signup-email {
+  width: 100%;
+}
+
+.signup-additional-info {
+  display: flex;
+
+  width: 100%;
+
+  > input {
+    flex: 1;
+  }
+}
+
+.signup-name {
+  width: 272px;
+}
+
+.signup-company {
+  width: 192px;
+  margin-left: 16px;
+}
+
+.signup-submit {
+  width: 160px;
+  margin-top: 32px;
 }
 
 .signup-contact {
@@ -326,4 +391,13 @@ footer.footer {
   margin-top: 29px;
   color: $base--color-tertiary;
   @include line-height(1.5);
+}
+
+/* MEDIA QUERIES
+=============================================================== */
+
+@media only screen and (max-width: 1216px) {
+  body {
+    display: none;
+  }
 }
