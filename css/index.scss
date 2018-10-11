@@ -73,6 +73,7 @@ section.hero {
   @include container();
 
   display: flex;
+  position: relative;
 
   background: white;
 }
@@ -122,15 +123,19 @@ section.hero {
 }
 
 .cta-button-container {
-  position: relative;
-
   height: 112px;
 }
 
-img.texture {
+.cta-texture-container {
   position: absolute;
-  left: 116px;
+  left: 116px; right: 0;
   z-index: 0;
+
+  overflow: hidden;
+}
+
+img.cta-texture {
+  height: 112px;
 }
 
 button.cta-button {
@@ -154,6 +159,7 @@ header.header {
   justify-content: center;
   position: absolute;
   top: 0;
+  z-index: 3;
 
   width: 100%; height: 128px;
 }
