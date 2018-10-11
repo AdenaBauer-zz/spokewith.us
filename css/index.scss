@@ -116,8 +116,9 @@ section.hero {
   position: absolute;
   right: 32px;
   bottom: 16px;
-
   z-index: 2;
+
+  width: 480px;
 }
 
 .cta-button-container {
@@ -290,16 +291,18 @@ section.signup {
 }
 
 form.signup-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   width: 100%;
   max-width: 480px;
   margin-bottom: 32px;
 }
 
-input[type="text"], input[type="submit"] {
+.signup-scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="text"], input[type="email"], input[type="submit"] {
   height: 64px;
   margin-bottom: 16px;
   border: none;
@@ -308,14 +311,14 @@ input[type="text"], input[type="submit"] {
   font-size: inherit;
 }
 
-input[type="text"] {
+input[type="text"], input[type="email"] {
   padding: 0 24px;
   border: 1px solid $color--gallery;
   background: $color--alabaster;
   font-size: 20px;
 }
 
-input[type="text"]::placeholder {
+input[type="text"]::placeholder, input[type="text"]::placeholder {
   color: $base--color-tertiary;
 }
 
@@ -349,9 +352,24 @@ input[type="submit"] {
   margin-left: 16px;
 }
 
+.signup-responses {
+
+  > .responses-text {
+    font-weight: 700;
+    text-align: center;
+    line-height: 32px;
+
+    a {
+      text-decoration: none;
+      color: $color--spoke;
+    }
+  }
+}
+
 .signup-submit {
   width: 160px;
   margin-top: 32px;
+  cursor: pointer;
 }
 
 .signup-contact {
@@ -397,7 +415,5 @@ footer.footer {
 =============================================================== */
 
 @media only screen and (max-width: 1216px) {
-  body {
-    display: none;
-  }
+
 }
