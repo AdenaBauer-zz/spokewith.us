@@ -66,7 +66,8 @@ section.hero {
 
   height: $hero--height;
   background: white;
-  background: linear-gradient(to right, white 0%, white 49%, $color--spoke 51%, $color--spoke 100%);;
+  background: linear-gradient(to right, white 0%, white 49%, $color--spoke 51%, $color--spoke 100%);
+  overflow: hidden;
 }
 
 .hero-container {
@@ -115,7 +116,7 @@ section.hero {
 
 .demo-illustration {
   position: absolute;
-  right: 32px;
+  right: -16px; // originally 32px
   bottom: 16px;
   z-index: 2;
 
@@ -343,10 +344,6 @@ input[type="submit"] {
   display: flex;
 
   width: 100%;
-
-  > input {
-    flex: 1;
-  }
 }
 
 .signup-name {
@@ -420,6 +417,77 @@ footer.footer {
 /* MEDIA QUERIES
 =============================================================== */
 
-@media only screen and (max-width: 1216px) {
+@media only screen and (max-width: 1024px) {
+  .demo-illustration {
+    right: -48px;
+  }
+}
 
+@media only screen and (max-width: 888px) {
+  section.hero {
+    background: white;
+  }
+
+  .cta-texture-container {
+    overflow: visible;
+  }
+
+  .container-demo {
+    display: none;
+  }
+
+  .text-theme > p {
+    font-size: 16px;
+  }
+
+  .text-statement {
+    font-size: 32px;
+    @include line-height(2.5);
+  }
+
+  .text-description {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0 !important;
+    text-align: center;
+  }
+
+  // .text-theme {
+  //   display: none;
+  // }
+
+  .container-diagram {
+    justify-content: initial !important;
+  }
+
+  .diagram-illustration {
+    margin: 0 !important;
+  }
+
+  .text-to-diagram .item-container {
+    flex-direction: column-reverse;
+  }
+
+  .diagram-to-text .item-container {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  section.hero {
+    height: auto;
+  }
+
+  .container-cta h1 {
+    font-size: 42px;
+    @include line-height(3.5);
+  }
 }
