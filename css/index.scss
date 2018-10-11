@@ -84,6 +84,9 @@ section.hero {
 }
 
 .container-cta {
+  display: flex;
+  flex-direction: column;
+
   padding-top: 185px;
 
   h1 {
@@ -171,6 +174,8 @@ header.header {
 
 .header-container {
   @include container();
+
+  display: flex;
 }
 
 /* CONTENT
@@ -425,6 +430,7 @@ footer.footer {
 
 @media only screen and (max-width: 888px) {
   section.hero {
+    height: auto;
     background: white;
   }
 
@@ -436,8 +442,12 @@ footer.footer {
     display: none;
   }
 
-  .text-theme > p {
-    font-size: 16px;
+  .text-theme {
+    padding-top: 48px;
+
+    > p {
+      font-size: 16px;
+    }
   }
 
   .text-statement {
@@ -448,9 +458,27 @@ footer.footer {
   .text-description {
     font-size: 16px;
   }
+
+  .diagram-illustration {
+    height: 320px;
+  }
+
+  .signup-description {
+    font-size: 16px;
+  }
 }
 
 @media only screen and (max-width: 720px) {
+  .container-cta {
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .cta-texture-container {
+    left: - ($page--margin-lr - 8px);
+  }
+
   .text-container {
     display: flex;
     flex-direction: column;
@@ -460,9 +488,9 @@ footer.footer {
     text-align: center;
   }
 
-  // .text-theme {
-  //   display: none;
-  // }
+  .text-theme > p {
+    display: none;
+  }
 
   .container-diagram {
     justify-content: initial !important;
@@ -472,6 +500,10 @@ footer.footer {
     margin: 0 !important;
   }
 
+  .content-item {
+    margin: 0;
+  }
+
   .text-to-diagram .item-container {
     flex-direction: column-reverse;
   }
@@ -479,13 +511,33 @@ footer.footer {
   .diagram-to-text .item-container {
     flex-direction: column;
   }
+
+  .header-container {
+    justify-content: center;
+  }
+
+  footer.footer {
+    height: auto;
+    padding: 0 0 48px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .footer-wordmark {
+    margin: 0 0 16px;
+  }
+
+  .footer-copyright {
+    margin: 0;
+    font-size: 12px;
+  }
 }
 
 @media only screen and (max-width: 640px) {
-  section.hero {
-    height: auto;
-  }
-
   .container-cta h1 {
     font-size: 42px;
     @include line-height(3.5);
