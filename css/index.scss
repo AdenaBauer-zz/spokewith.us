@@ -182,7 +182,7 @@ header.header {
 =============================================================== */
 
 section.content {
-  padding-top: 48px; padding-bottom: 16px;
+  padding-top: 48px;
 }
 
 .content-item {
@@ -462,10 +462,6 @@ footer.footer {
   .diagram-illustration {
     height: 320px;
   }
-
-  .signup-description {
-    font-size: 16px;
-  }
 }
 
 @media only screen and (max-width: 720px) {
@@ -514,6 +510,23 @@ footer.footer {
 
   .header-container {
     justify-content: center;
+  }
+
+  .signup-description {
+    font-size: 16px;
+  }
+
+  .signup-additional-info {
+    flex-direction: column;
+  }
+
+  .signup-name {
+    width: 100%;
+  }
+
+  .signup-company {
+    width: 100%;
+    margin: 0;
   }
 
   footer.footer {
