@@ -191,6 +191,23 @@ section.content {
 
   margin-bottom: 48px;
 
+  &.three-values {
+    
+    .text-container {
+      margin-right: 32px;
+      max-width: 350px;
+      float:left;
+    }
+
+    .container-diagram {
+      justify-content: flex-end;
+    }
+
+    .diagram-illustration {
+      margin-left: 3 2px;
+    }
+  }
+/*
   &.text-to-diagram {
     
     .text-container {
@@ -218,25 +235,27 @@ section.content {
     .diagram-illustration {
       margin-right: 32px;
     }
-  }
+  }*/
 }
+
 
 .item-container {
   @include container();
 
   display: flex;
+
 }
 
 .container-text, .container-diagram {
-  flex: 1;
+  /*flex: 1;*/
   display: flex;
 }
 
 .container-text {
   flex-direction: column;
 
-  h2, p {
-    max-width: 480px;
+  h3, p {
+    max-width: 400px;
   }
 }
 
