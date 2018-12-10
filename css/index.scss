@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 52px;
-  @include line-height(4.5);
+  /*@include line-height(4.5);*/
 }
 
 h2 {
@@ -90,14 +90,14 @@ section.hero {
   padding-top: 185px;
 
   h1 {
-    max-width: 400px;
-    margin-bottom: 16px;
+    max-width: 540px;
+    margin-bottom: 30px;
   }
   p {
-    max-width: 400px;
-    margin-bottom: 24px;
+    max-width: 580px;
+    margin-bottom: 30px;
     font-size: 20px;
-    @include line-height(2);
+    /*@include line-height(2);*/
     color: $base--color-secondary;
   }
 }
@@ -182,7 +182,7 @@ header.header {
 =============================================================== */
 
 section.content {
-  padding-top: 48px;
+  padding-top: 100px;
 }
 
 .content-item {
