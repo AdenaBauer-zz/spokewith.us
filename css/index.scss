@@ -3,6 +3,7 @@
 
 @import 'var';
 
+
 /* GENERAL
 =============================================================== */
 
@@ -182,113 +183,111 @@ header.header {
 =============================================================== */
 
 section.content {
-  padding-top: 100px;
+  padding-top: 50px;
+  background: white;
+
 }
 
-.content-item {
-  display: flex;
+/*start content-1*/
+
+.content-1 {
+  position: relative;
+  margin-bottom: 50px;
   justify-content: center;
-
-  margin-bottom: 48px;
-
-  &.three-values {
-    
-    .text-container {
-      margin-right: 32px;
-      max-width: 350px;
-      float:left;
-    }
-
-    .container-diagram {
-      justify-content: flex-end;
-    }
-
-    .diagram-illustration {
-      margin-left: 3 2px;
-    }
-  }
-/*
-  &.text-to-diagram {
-    
-    .text-container {
-      margin-right: 32px;
-    }
-
-    .container-diagram {
-      justify-content: flex-end;
-    }
-
-    .diagram-illustration {
-      margin-left: 32px;
-    }
-  }
-  &.diagram-to-text {
-
-    .text-container {
-      margin-left: 32px;
-    }
-
-    .container-diagram {
-      justify-content: flex-start;
-    }
-    
-    .diagram-illustration {
-      margin-right: 32px;
-    }
-  }*/
-}
-
-
-.item-container {
-  @include container();
-
-  display: flex;
-
-}
-
-.container-text, .container-diagram {
-  /*flex: 1;*/
-  display: flex;
-}
-
-.container-text {
-  flex-direction: column;
-
-  h3, p {
-    max-width: 400px;
-  }
-}
-
-.text-theme {
   display: flex;
   align-items: center;
-
-  margin-bottom: 13px;
-  padding-top: 96px;
-
-  > p {
-    margin-left: 24px;
-    font-size: 20px;
-    font-weight: 700;
-  }
 }
 
-.text-statement {
-  margin-bottom: 20px;
-}
-
-.text-description {
-  color: $base--color-secondary;
-  font-size: 20px;
-  @include line-height(2);
-}
-
-.diagram-illustration {
-  width: 100%; height: 448px;
+.illustration img{
+  height: 400px;
+  widows: 100%;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+
 }
+
+.illustration{
+  margin-right: 32px;
+
+}
+
+.text-right-of-illustration{
+  justify-content: flex-end;
+  margin-left: 50px;
+  max-width: 500px;
+}
+
+.text-right-of-illustration h2{
+  line-height: 150%;
+
+}
+
+.text-right-of-illustration p{
+  margin-top: 20px;
+  line-height: 200%;
+
+}
+
+
+
+/*end content-1*/
+
+/*start content-2*/
+
+.content-2 {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.value-box{
+  max-width: 400px;
+  /*display: inline-block;*/
+  padding-right: 30px;
+  padding-left: 30px;
+}
+/*end content-2*/
+
+/*who uses chai section*/
+
+.grid-of-chai-users{
+  width:100%;
+  height: 700px;
+  background-color: #EEEEEE;
+  display: flex;
+  flex: 2;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.chai-user{
+  max-width: 500px;
+  height: 200px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+
+}
+
+.chai-user-text-container{
+  max-width: 450px;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.chai-user-text-container p{
+  margin-top:10px;
+}
+
+/*end who uses chai section*/
+
+
 
 /* SIGNUP
 =============================================================== */
@@ -296,7 +295,7 @@ section.content {
 section.signup {
   display: flex;
   justify-content: center;
-
+  margin-top: 100px;
   padding-top: 77px; padding-bottom: 93px;
 }
 
