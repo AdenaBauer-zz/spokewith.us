@@ -1,7 +1,36 @@
 ---
 ---
 
-@import 'var';
+/*Variables*/ 
+
+/* THEME
+=============================================================== */
+
+$color--gallery: #eee;
+$color--alabaster: #fafafa;
+
+$color--spoke: #FF6060;
+
+/* BASE
+=============================================================== */
+
+$base--font-family: 'Muli', 'Helvetica Neue', 'Arial', sans-serif;
+$base--font-family-h: 'Lora', serif;
+$base--font-size: 16px;
+$base--color-primary: #000;
+$base--color-secondary: #555;
+$base--color-tertiary: #888;
+$base--background: white;
+
+/* LAYOUT
+=============================================================== */
+
+$page--margin-lr: 32px;
+$page--max-width: 1152px;
+
+@mixin line-height($mult) {
+  line-height: $mult * 16px; // mult * base rhythm
+}
 
 
 /* GENERAL
@@ -35,13 +64,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 52px;
+  font-size: 48px;
   /*@include line-height(4.5);*/
 }
 
 h2 {
-  font-size: 42px;
-  @include line-height(3.5);
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+    letter-spacing: .025em;
+  /*@include line-height(1.5);*/
 }
 
 h3 {
@@ -55,10 +87,17 @@ h3 {
   margin: 0 $page--margin-lr;
 }
 
+p{
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: .025em;
+    margin-top: 10px;
+}
+
 /* HERO, HEADER
 =============================================================== */
 
-$hero--height: 640px;
+$hero--height: 680px;
 
 section.hero {
   display: flex;
@@ -69,6 +108,7 @@ section.hero {
   background: white;
   background: linear-gradient(to right, white 0%, white 49%, $color--spoke 51%, $color--spoke 100%);
   overflow: hidden;
+
 }
 
 .hero-container {
@@ -91,11 +131,12 @@ section.hero {
   padding-top: 185px;
 
   h1 {
-    max-width: 540px;
+    max-width: 500px;
     margin-bottom: 30px;
   }
   p {
-    max-width: 580px;
+    max-width: 500px;
+
     margin-bottom: 30px;
     font-size: 20px;
     /*@include line-height(2);*/
@@ -105,6 +146,8 @@ section.hero {
 
 .container-demo {
   position: relative;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .demo-bkg-square {
@@ -116,23 +159,25 @@ section.hero {
   height: 0;
   border-top: $hero--height solid $color--spoke;
   border-left: $hero--height solid transparent;
+
 }
 
 .demo-illustration {
   position: absolute;
-  right: -16px; /*originally 32px*/
-  bottom: 16px;
+  bottom: 80px;
+  right: 0;
   z-index: 2;
-  width: 300px;
+  width: 420px;
 }
 
 .cta-button-container {
   height: 112px;
+  margin-top: 50px;
 }
 
 .cta-texture-container {
   position: absolute;
-  left: 116px; right: 0; 
+  /*left: 116px; right: 0; */
   z-index: 0;
   overflow: hidden;
 }
@@ -159,7 +204,7 @@ button.cta-button {
 
 header.header {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   position: absolute;
   top: 0;
   z-index: 3;
@@ -168,7 +213,7 @@ header.header {
 }
 
 .container-wordmark {
-  margin-top: 62px;
+  margin-top: 10px;
 }
 
 .header-container {
@@ -181,7 +226,7 @@ header.header {
 =============================================================== */
 
 section.content {
-  padding-top: 50px;
+  padding-top: 20px;
   background: white;
   justify-content: center;
 
@@ -189,42 +234,45 @@ section.content {
 
 /*start content-1*/
 
-.content-1 {
+.content-1{
   position: relative;
   margin-bottom: 30px;
-  justify-content: center;
   display: flex;
   align-items: center;
+  padding: 10px;
+  justify-content: center;
+
 }
 
 .illustration img{
   height: 400px;
   widows: 100%;
+  margin: 20px;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 
 }
 
-.illustration{
+/*(.illustration{
   margin-right: 32px;
 
+}*/
+
+.text h2{
+width: 450px;
+font-style: normal;
+font-weight: normal;
+line-height: 45px;
+font-size: 30px;
 }
 
-.text-right-of-illustration{
-  margin-left: 50px;
-  max-width: 500px;
-}
-
-.text-right-of-illustration h2{
-  line-height: 150%;
-
-}
-
-.text-right-of-illustration p{
-  margin-top: 20px;
-  line-height: 200%;
-
+.text {
+width: 450px;
+font-style: normal;
+font-weight: normal;
+line-height: 47px;
+font-size: 30px;
 }
 
 
@@ -236,47 +284,24 @@ section.content {
 .content-2 {
   position: relative;
   display: flex;
-  margin-top: 100px;
+  /*margin-top: 100px;*/
   margin-bottom: 100px;
-}
-
-.value-boxes{
-  position: relative;
   justify-content: center;
-  display: flex;
-  margin-right: 240px;
-  padding: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
-
-.value-title{
-  size: 20px;
-  font-weight: bold;
-  line-height: 200%;
-}
-
-.shape-left{
-    /*shape*/
-    float:left;
-    min-width: 100%;
-    shape-outside: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
-    shape-margin: 10px;
-    clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
-    background-color:#DEEEFF;
-    justify-content: center;
-    display: flex;
-  }
 
 .value-box{
-  max-width: 300px;
-  max-height: 250px;
-  /*display: inline-block;*/
-  padding: 15px;
-  font-size: 16px;
-  justify-content: center;
-  margin: 20px;
-  line-height: 150%
+  padding: 50px;
+  width: 400px;
+  align-content: center;
+}
+
+.value-box img{
+  height: 100px;
 
 }
+
 
 /*end content-2*/
 
@@ -284,16 +309,10 @@ section.content {
 
 
 .who-uses-chai{
-  max-width: 800;
-  background-color: white;
-  padding: 50px;
+   justify-content: center;
+
 }
 
-.who-uses-chai h2{
-    max-width: 540px;
-    margin-bottom: 30px;
-    margin-left: 100px;
-}
 
 .grid-of-chai-users{
   align-items: center;
@@ -311,8 +330,6 @@ section.content {
   display: flex;
   position: relative;
   align-items: center;
-
-
 }
 
 .chai-user img{
@@ -331,17 +348,12 @@ section.content {
   position: relative;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
-  line-height: 32px;
   padding: 25px;
   box-shadow: -2px 2px 5px #EEEEEE;
   border: .5px solid #EEEEEE;
 
 }
 
-.chai-user-text-container p{
-  margin-top:10px;
-}
 
 /*end who uses chai section*/
 
