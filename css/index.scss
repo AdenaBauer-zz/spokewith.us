@@ -55,9 +55,6 @@ body {
   background: $base--background;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  margin: 0; padding: 0;
-}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $base--font-family-h;
@@ -289,17 +286,22 @@ font-size: 30px;
   justify-content: center;
   margin-left: 50px;
   margin-right: 50px;
+  align-items: center;
 }
 
 .value-box{
   padding: 50px;
   width: 400px;
-  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
 }
 
 .value-box img{
-  height: 100px;
-
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -308,11 +310,19 @@ font-size: 30px;
 /*who uses chai section*/
 
 
-.who-uses-chai{
-   justify-content: center;
 
+section.who-uses-chai {
+  background: white;
+  justify-content: center;
 }
 
+.who-uses-chai-title h2{
+  font-style: normal;
+  font-weight: normal;
+  line-height: 45px;
+  font-size: 30px;
+  text-align: center;
+}
 
 .grid-of-chai-users{
   align-items: center;
@@ -327,9 +337,11 @@ font-size: 30px;
 }
 
 .chai-user {
-  display: flex;
-  position: relative;
-  align-items: center;
+  justify-content: center;
+}
+
+.chai-user-image{
+  align-self: center;
 }
 
 .chai-user img{
