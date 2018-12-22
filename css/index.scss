@@ -86,6 +86,7 @@ h3 {
 
 p{
     font-size: 20px;
+    font-family: $base--font-size;
     line-height: 28px;
     letter-spacing: .025em;
     margin-top: 10px;
@@ -233,16 +234,17 @@ section.content {
 
 .content-1{
   position: relative;
-  margin-bottom: 30px;
   display: flex;
+  flex-flow: row wrap;
   align-items: center;
   padding: 10px;
   justify-content: center;
+  margin: 10px;
 
 }
 
 .illustration img{
-  height: 400px;
+  width: 600px;
   widows: 100%;
   margin: 20px;
   background-size: contain;
@@ -251,25 +253,31 @@ section.content {
 
 }
 
+.illustration2 img{
+  width: 300px;
+  margin: 20px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 /*(.illustration{
   margin-right: 32px;
 
 }*/
 
-.text h2{
-width: 450px;
-font-style: normal;
-font-weight: normal;
-line-height: 45px;
-font-size: 30px;
+.content-1 h2{
+  width: 450px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 45px;
+  font-size: 30px;
+  align-self: center;
 }
 
-.text {
+.content-1 p{
 width: 450px;
-font-style: normal;
-font-weight: normal;
-line-height: 47px;
-font-size: 30px;
+align-self: center;
 }
 
 
@@ -281,20 +289,23 @@ font-size: 30px;
 .content-2 {
   position: relative;
   display: flex;
-  /*margin-top: 100px;*/
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-left: 20px;
+  margin-right: 20px;
   margin-bottom: 100px;
-  justify-content: center;
-  margin-left: 50px;
-  margin-right: 50px;
-  align-items: center;
 }
 
 .value-box{
-  padding: 50px;
+  position: relative;
+  /*padding: 20px;*/
   width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
 
 }
 
@@ -331,8 +342,10 @@ section.who-uses-chai {
 
 
 .two-chai-users{
+  position: relative;
   display: flex;
   justify-content: center;
+  flex-flow: row wrap;
   align-items: center;
 }
 
@@ -522,9 +535,31 @@ footer.footer {
 /* MEDIA QUERIES
 =============================================================== */
 
+@media only screen and (max-width: 1224px) {
+  .illustration img{
+    width: 400px;
+  }
+}
+
+
 @media only screen and (max-width: 1024px) {
   .demo-illustration {
     right: -48px;
+  }
+  .illustration img{
+    width: 300px;
+  }
+
+  .content-1 h2{
+    width: 400px;
+    line-height: 36px;
+    font-size: 24px;
+  }
+
+  .content-1 p{
+    width: 400px;
+    line-height: 24px;
+    font-size: 16px;
   }
 }
 
@@ -569,6 +604,13 @@ footer.footer {
     align-items: center;
 
     text-align: center;
+  }
+
+
+  .content-1{
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
   }
 
   .cta-texture-container {
@@ -655,4 +697,67 @@ footer.footer {
     font-size: 42px;
     @include line-height(3.5);
   }
+  .content-1{
+    justify-content: center;
+  }
+
+  .content-2{
+    justify-content: center;
+  }
+
+  .value-box h2{
+    width: 300px;
+    line-height: 30px;
+    font-size: 20px;
+    padding: 5px;
+  }
+
+  .value-box p{
+    width: 300px;
+    line-height: 20px;
+    font-size: 16px;
+  }
+
+  .value-box img{
+    height: 40px;
+  }
+
+}
+
+@media only screen and (max-width: 460px) {
+  .container-cta h1 {
+    font-size: 42px;
+    @include line-height(3.5);
+  }
+
+  .content-1{
+    margin: auto;
+    padding: 5px;
+  }
+  
+  .content-1 h2{
+    width: 300px;
+    line-height: 36px;
+    font-size: 24px;
+  }
+
+  .content-1 p{
+    width: 300px;
+    line-height: 24px;
+    font-size: 16px;
+  }
+
+  .value-box h2{
+    width: 300px;
+    line-height: 30px;
+    font-size: 20px;
+    padding: 5px;
+  }
+
+  .value-box p{
+    width: 300px;
+    line-height: 20px;
+    font-size: 16px;
+  }
+
 }
