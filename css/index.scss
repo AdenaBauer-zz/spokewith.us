@@ -286,15 +286,33 @@ align-self: center;
 
 /*start content-2*/
 
-.content-2 {
+
+.content-2{
   position: relative;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  align-content: center;
+  justify-content: center;
+}
+
+
+.values {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
   margin-left: 20px;
   margin-right: 20px;
   margin-bottom: 100px;
 }
+
+
+.illustration2{
+  width: 200px;
+  height: 100%;
+}
+
+
 
 .value-box{
   position: relative;
